@@ -1,14 +1,14 @@
 package chapter.fifteen.exercise05;
 
 public class LinkedStack<T> {
-	static class Node<T> {
+	private class Node {
 		T item;
-		Node<T> next;
+		Node next;
 		Node() {
 			item = null;
 			next = null;
 		}
-		Node(T item, Node<T> next) {
+		Node(T item, Node next) {
 			this.item = item;
 			this.next = next;
 		}
@@ -16,7 +16,7 @@ public class LinkedStack<T> {
 			return item == null && next == null;
 		}
 	}
-	private Node<T> top = new Node();
+	private Node top = new Node();
 	
 	public void push(T item) {
 		top = new Node(item, top);
